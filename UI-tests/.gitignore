@@ -4,6 +4,7 @@
 tmp
 *.DS_Store
 Pipfile
+venv
 
 # Environments
 .venv
