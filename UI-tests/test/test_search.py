@@ -1,13 +1,16 @@
-import time
-from pages.open_page import OpenPage
-from locators.locators import Locators as Locators
+from selenium.webdriver import Keys
+from base_page import BasePage
+from locators.locators_for_test_search import Locators as Locators
 
 
-class TestPage:
+class TestPage():
 
-    def test_search(self, driver):
-        searching_page = OpenPage(driver, 'https://www.google.com/')
-        searching_page.open()
-        searching_page.fill_and_submit()
-        result = searching_page.check_result()
-        
+    def test_dosta_search(self, driver, baseurl):
+        page = BasePage(driver, baseurl)
+        page.open()
+        searching_text = 'Достаевский'
+        search = page.element_is_visible(Locators.SEARCH_FIELD)
+        search.send_keys(searching_text)
+        search.send_keys(Keys.RETURN)
+        result = page.element_is_visible(Locators.RESULT_BLOCK)
+        assert "https://dostaevsky.ru" == result.text

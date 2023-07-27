@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import pytest
+import yaml
 
 
 @pytest.fixture()
@@ -13,3 +14,15 @@ def driver():
     driver.maximize_window()
     yield driver
     driver.quit()
+
+
+@pytest.fixture()
+def conf():
+    with open('conf.yaml') as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
+        return data
+
+
+@pytest.fixture()
+def baseurl(conf):
+    return conf['baseurl']['BASEURL']
