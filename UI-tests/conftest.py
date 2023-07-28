@@ -11,6 +11,7 @@ def driver():
         url = "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json", 
         driver_version = "115.0.5790.3").install())
     driver = webdriver.Chrome(service=driver_service)
+    driver.implicitly_wait(10)
     driver.maximize_window()
     yield driver
     driver.quit()
@@ -26,3 +27,8 @@ def conf():
 @pytest.fixture()
 def baseurl(conf):
     return conf['baseurl']['BASEURL']
+
+
+@pytest.fixture()
+def googleurl(conf):
+    return conf['baseurl']['GURL']

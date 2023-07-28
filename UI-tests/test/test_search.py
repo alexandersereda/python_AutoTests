@@ -5,8 +5,8 @@ from locators.locators_for_test_search import Locators as Locators
 
 class TestPage():
 
-    def test_dosta_search(self, driver, baseurl):
-        page = BasePage(driver, baseurl)
+    def test_dosta_search(self, driver, googleurl):
+        page = BasePage(driver, googleurl)
         page.open()
         searching_text = 'Достаевский'
         search = page.element_is_visible(Locators.SEARCH_FIELD)
