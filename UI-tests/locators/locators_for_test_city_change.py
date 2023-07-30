@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class Locators:
+    
     MAIN_CITY_CONFIRM = (By.XPATH, '//div[@class="main-nav__city"]//button[contains(text(),"Да")]')
     SELECT_CITY = (By.XPATH, '//div[@class="main-nav__city"]')
     CITY_CONFIRM_SPB = (By.XPATH, '//a[@href="https://dostaevsky.ru/"]')
