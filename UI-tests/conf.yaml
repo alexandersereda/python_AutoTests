@@ -1,3 +1,4 @@
 baseurl: 
   BASEURL: https://dostaevsky.ru
+  BASEURL_ORDERING: https://dostaevsky.ru/ordering
   GURL: https://www.google.com/
