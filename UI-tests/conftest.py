@@ -10,7 +10,7 @@ import pickle
 def driver():
     driver_service = Service(ChromeDriverManager(
         url = "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json", 
-        driver_version = "115.0.5790.3").install())
+        driver_version = "115.0.5790.170").install())
     driver = webdriver.Chrome(service=driver_service)
     driver.implicitly_wait(10)
     driver.maximize_window()
@@ -22,7 +22,7 @@ def driver():
 def driver_authorized():
     driver_service = Service(ChromeDriverManager(
         url = "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json", 
-        driver_version = "115.0.5790.3").install())
+        driver_version = "115.0.5790.170").install())
     driver = webdriver.Chrome(service=driver_service)
     driver.get("https://dostaevsky.ru")
     cookies = pickle.load(open("cookies.pkl", "rb"))

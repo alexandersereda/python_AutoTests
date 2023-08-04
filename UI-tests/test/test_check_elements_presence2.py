@@ -3,14 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import yaml
 
-@pytest.fixture(scope="session")
-def driver():
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(10)
-    driver.maximize_window()
-    yield driver
-    driver.quit()
+# @pytest.fixture(scope="session")
+# def driver():
+#     driver = webdriver.Chrome()
+#     driver.implicitly_wait(10)
+#     driver.maximize_window()
+#     yield driver
+#     driver.quit()
 
 def test_check_element1_presence(driver, baseurl):
     driver.get(baseurl)
@@ -19,7 +20,7 @@ def test_check_element1_presence(driver, baseurl):
 
 def test_check_element2_presence(driver, baseurl):
     driver.get(baseurl)
-    element2_present = len(driver.find_elements(By.XPATH, "//a[@class='title-secondary']")) > 0
+    element2_present = len(driver.find_elements(By.XPATH, "//div[@class='title-secondary']")) > 0
     assert element2_present, "Элемент 'Популярное' не найден на странице."
 
 def test_check_element3_presence(driver, baseurl):
