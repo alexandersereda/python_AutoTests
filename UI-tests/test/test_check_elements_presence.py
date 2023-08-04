@@ -3,17 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import yaml
 
-# @pytest.fixture
-# def driver():
-#     # Инициализация драйвера браузера перед каждым тестом
-#     driver = webdriver.Chrome() 
-#     yield driver
-#     # Закрытие браузера после каждого теста
-#     driver.quit()
-
-# def test_check_elements_presence(driver):
-#     # Открываем страницу для теста
-#     driver.get("https://dostaevsky.ru/")
 
 def read_config():
     with open("conf.yaml", "r") as file:
@@ -50,6 +39,6 @@ def test_check_elements_presence(driver):
         favorite_element_present = False
 
     if favorite_element_present:
-        print("Element 'Избранное' is present.")
+        print("Элемент 'Избранное' присутствует.")
     else:
-        print("Element 'Избранное' is not present.")
+        print("Элемент 'Избранное' отсутствует.")

@@ -5,13 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import yaml
 
-# @pytest.fixture(scope="session")
-# def driver():
-#     driver = webdriver.Chrome()
-#     driver.implicitly_wait(10)
-#     driver.maximize_window()
-#     yield driver
-#     driver.quit()
 
 def test_check_element1_presence(driver, baseurl):
     driver.get(baseurl)
@@ -46,6 +39,6 @@ def test_check_favorite_element(driver, baseurl):
         favorite_element_present = False
 
     if favorite_element_present:
-        print("Element 'Избранное' is present.")
+        print("Элемент 'Избранное' присутствует.")
     else:
-        print("Element 'Избранное' is not present.")
+        print("Элемент 'Избранное' отсутствует.")
