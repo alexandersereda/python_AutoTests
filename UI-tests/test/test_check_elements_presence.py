@@ -30,7 +30,7 @@ def test_check_elements_presence(driver):
     li_elements = main_nav_list.find_elements(By.XPATH, ".//li[@class='main-nav__item']")
     li_count = len(li_elements)
 
-    print(f"Number of <li class='main-nav__item'> elements: {li_count}")
+    print(f"Количество <li class='main-nav__item'> элементов: {li_count}")
     
     # Проверяем наличие элемента "Избранное", если пользователь авторизован
     try:
