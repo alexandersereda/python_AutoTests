@@ -13,7 +13,7 @@ def test_check_element1_presence(driver, baseurl):
 
 def test_check_element2_presence(driver, baseurl):
     driver.get(baseurl)
-    element2_present = len(driver.find_elements(By.XPATH, "//div[@class='title-secondary']")) > 0
+    element2_present = len(driver.find_elements(By.XPATH, "//a[@class='title-secondary']")) > 0
     assert element2_present, "Элемент 'Популярное' не найден на странице."
 
 def test_check_element3_presence(driver, baseurl):
@@ -29,7 +29,7 @@ def test_count_li_elements(driver, baseurl):
     li_elements = main_nav_list.find_elements(By.XPATH, ".//li[@class='main-nav__item']")
     li_count = len(li_elements)
     assert li_count > 0, "No <li class='main-nav__item'> elements found on the page."
-    print(f"Number of <li class='main-nav__item'> elements: {li_count}")
+    print(f"Количество <li class='main-nav__item'> элементов: {li_count}")
 
 def test_check_favorite_element(driver, baseurl):
     driver.get(baseurl)
